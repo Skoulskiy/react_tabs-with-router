@@ -1,5 +1,5 @@
-import { Link, useParams } from "react-router-dom";
-import classNames from "classnames";
+import { Link, useParams } from 'react-router-dom';
+import classNames from 'classnames';
 
 const tabs = [
   { id: 'tab-1', title: 'Tab 1', content: 'Some text 1' },
@@ -17,15 +17,13 @@ export const TabsPage = () => {
 
       <div className="tabs is-boxed">
         <ul>
-          {tabs.map(t => (
+          {tabs.map(tab => (
             <li
-              key={t.id}
+              key={tab.id}
               data-cy="Tab"
-              className={classNames({ 'is-active': t.id === tabId })}
+              className={classNames({ 'is-active': tab.id === tabId })}
             >
-              <Link to={`/tabs/${t.id}`}>
-                {t.title}
-              </Link>
+              <Link to={`/tabs/${tab.id}`}>{tab.title}</Link>
             </li>
           ))}
         </ul>
